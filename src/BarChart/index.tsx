@@ -812,7 +812,7 @@ export const BarChart = (props: PropTypes) => {
     }
 
     console.log(label, "Label")
-    var labelTag = (label == 0 || label == 30) ? `${label}mins` : label % 30 === 0 && `${(label / 30) / 2}hr`
+    var labelTag = (label == 0 || label == 30) ? `${label} mins` : label % 30 === 0 && `${(label / 30) / 2}hr`
     return yAxisLabelPrefix + labelTag + yAxisLabelSuffix;
   };
 
@@ -821,7 +821,6 @@ export const BarChart = (props: PropTypes) => {
       <>
         {horizSections.map((sectionItems, index) => {
 
-          console.log(index, "Index log", sectionItems, noOfSections)
           return (
             <View
               key={index}
@@ -933,7 +932,7 @@ export const BarChart = (props: PropTypes) => {
                     transform: [
                       {
                         translateX:
-                          (props.width ? props.width : totalWidth) - 30,
+                          (props.width ? props.width : totalWidth) - 20,
                       },
                       { rotateY: '360deg' },
                     ],
