@@ -812,7 +812,7 @@ export const BarChart = (props: PropTypes) => {
     }
 
     console.log(label, "Label")
-    var labelTag = label == 0 ? `${label} min` : label % 60 === 0 ? `${label / 60}hr` : `${label}min`
+    var labelTag = (label == 0 || label == 30) ? `${label}mins` : label % 30 === 0 && `${(label / 30) / 2}hr`
     return yAxisLabelPrefix + labelTag + yAxisLabelSuffix;
   };
 
@@ -956,9 +956,9 @@ export const BarChart = (props: PropTypes) => {
                   ellipsizeMode={'clip'}
                   style={[
                     yAxisTextStyle,
-                    yAxisSide === 'right' && {
-                      transform: [{ rotateY: '180deg' }],
-                    },
+                    // yAxisSide === 'right' && {
+                    //   transform: [{ rotateY: '180deg' }],
+                    // },
                     index === noOfSections && {
                       marginBottom: stepHeight / -2,
                     },
@@ -1129,7 +1129,7 @@ export const BarChart = (props: PropTypes) => {
                           ? yAxisLabelWidth + yAxisThickness
                           : yAxisLabelWidth + yAxisThickness - 5,
                     }}>
-                    <Rule config={referenceLine1Config} />
+                    {/* <Rule config={referenceLine1Config} /> */}
                     {referenceLine1Config.labelText ? (
                       <Text
                         style={[
@@ -1155,7 +1155,7 @@ export const BarChart = (props: PropTypes) => {
                           ? yAxisLabelWidth + yAxisThickness
                           : yAxisLabelWidth + yAxisThickness - 5,
                     }}>
-                    <Rule config={referenceLine2Config} />
+                    {/* <Rule config={referenceLine2Config} /> */}
                     {referenceLine2Config.labelText ? (
                       <Text
                         style={[
@@ -1181,7 +1181,7 @@ export const BarChart = (props: PropTypes) => {
                           ? yAxisLabelWidth + yAxisThickness
                           : yAxisLabelWidth + yAxisThickness - 5,
                     }}>
-                    <Rule config={referenceLine3Config} />
+                    {/* <Rule config={referenceLine3Config} /> */}
                     {referenceLine3Config.labelText ? (
                       <Text
                         style={[
