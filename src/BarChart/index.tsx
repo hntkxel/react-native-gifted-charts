@@ -21,6 +21,7 @@ import Rule from '../Components/lineSvg';
 import { bezierCommand, svgPath } from '../utils';
 import Svg, { Circle, Path, Rect, Text as CanvasText } from 'react-native-svg';
 import { Item } from 'react-native-paper/lib/typescript/components/List/List';
+import normalize from 'rn-normalized';
 
 type PropTypes = {
   width?: number;
@@ -932,7 +933,7 @@ export const BarChart = (props: PropTypes) => {
                     transform: [
                       {
                         translateX:
-                          (props.width ? props.width : totalWidth) - 20,
+                          (props.width ? props.width : totalWidth) - 45,
                       },
                       { rotateY: '360deg' },
                     ],
